@@ -18,7 +18,7 @@ module.exports = {
     return res.json(user)
     },
     async index(req, res){
-    if(!req.headers){
+    if(!req.headers.identifier){
         return res.send("Não era pra você estar aqui")
     }
     const { indentifier, password } = req.headers
