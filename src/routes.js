@@ -3,6 +3,7 @@ const SessionController = require("./controllers/SessionController.js")
 const DashboardController = require("./controllers/DashboardController.js")
 var routes = express.Router()
 
+routes.get("/", (req, res) => { res.send("OK") })
 routes.post("/users", SessionController.store)
 routes.get("/users", SessionController.index)
 routes.get("/dashboard", DashboardController.index)
