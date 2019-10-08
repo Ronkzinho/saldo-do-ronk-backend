@@ -10,6 +10,9 @@ const bodyParser = require('body-parser')
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(cors())
+app.use((req, res) => {
+  req.header("Access-Control-Allow-Origin", "*")
+})
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
