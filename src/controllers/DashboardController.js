@@ -1,6 +1,9 @@
 const User = require("../models/User")
 module.exports = {
     async index(req, res){
+        if(!req.headers){
+            return res.send("Não era para você estar aqui")
+        }
         var { _id } = req.headers
         var user = await User.findById(_id)
         if(!user){
