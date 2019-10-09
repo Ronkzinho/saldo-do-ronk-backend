@@ -18,6 +18,12 @@ module.exports = {
     return res.json(user)
     },
     async index(req, res){
+<<<<<<< HEAD
+=======
+    if(!req.headers.indentifier){
+        return res.send("Não era pra você estar aqui")
+    }
+>>>>>>> d904004ca12efe76112239903fd1a6fb37766240
     const { indentifier, password } = req.headers
     var user = await User.findOne({ email: indentifier }) ? await User.findOne({ email: indentifier }) : await User.findOne({ username: identifier })
     if(!user){
