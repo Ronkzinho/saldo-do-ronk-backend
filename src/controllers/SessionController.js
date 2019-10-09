@@ -19,7 +19,7 @@ module.exports = {
     },
     async index(req, res){
     const { indentifier, password } = req.headers
-    var user = await User.findOne({ email: indentifier }) ? await User.findOne({ email: indentifier }) : await User.findOne({ username: identifier })
+    var user = await User.findOne({ email: indentifier }) ? await User.findOne({ email: indentifier }) : await User.findOne({ username: indentifier })
     if(!user){
         return res.send({ error: "Nenhum usuário encontrado" })
     }
