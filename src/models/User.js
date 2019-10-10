@@ -4,7 +4,12 @@ const UserSchema = new mongoose.Schema({
     username: String,
     email: String,
     password: String,
-    saldo: Number
+    saldo: Number,
+    history: [{
+        descrição: String,
+        quantia: Number,
+        data: String
+    }]
 })
 
 module.exports = mongoose.model('User', UserSchema)
