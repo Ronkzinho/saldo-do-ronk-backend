@@ -6,7 +6,7 @@ module.exports = {
         if(!user){
             return res.send({ error: "Usuário não encontrado" })
         }
-        user.history = user.history.filter(id !== history_id)
+        user.history = user.history.filter(hist => hist._id !== history_id)
         user.save()
         return res.json(user)
     }
