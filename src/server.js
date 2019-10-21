@@ -10,7 +10,7 @@ const server = http.Server(app)
 const bodyParser = require('body-parser')
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
-app.use(cors({ origin: [`http://25.3.27.131:3000`, "https://saldo-do-ronk.herokuapp.com", null] }));
+app.use(cors({ origin: [`http://25.3.27.131:3000`, "https://saldo-do-ronk.herokuapp.com", "http://saldo-do-ronk.herokuapp.com", null]})
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
